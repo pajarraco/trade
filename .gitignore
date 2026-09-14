@@ -1,0 +1,28 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+
+# Private records. Kept in this folder on this computer, never pushed.
+context/data/**
+!context/data/**/
+!context/data/**/README.md
+!context/data/**/.gitkeep
+context/history/**
+!context/history/**/
+!context/history/**/README.md
+!context/history/**/.gitkeep
+!context/history/**/_template.md
+context/memory/**
+!context/memory/README.md
+
+# Claude Code personal settings
+.claude/settings.local.json
+
+# Operating system files
+Thumbs.db
+desktop.ini
+.DS_Store

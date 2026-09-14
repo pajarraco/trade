@@ -1,0 +1,53 @@
+# What the trading agent is allowed to do.
+# Only the owner changes this file. Log every change in changelog.md.
+# Agents read this at the start of every session. If anything is unclear,
+# follow the more restrictive reading and ask the owner.
+
+mode: research          # research | paper | live
+rules_status: draft     # draft | approved. While draft, the agent acts as if mode is research.
+
+# What each mode allows. Each mode includes everything in the modes above it.
+modes:
+  research:
+    - read market data from approved connections
+    - read balances, positions and orders from approved connections
+    - analyse, screen and backtest
+    - write files inside this folder
+  paper:
+    - place, modify and cancel orders on paper or demo accounts
+  live:
+    - prepare live order tickets, each confirmed by the owner with "CONFIRM <ticket id>"
+
+# Needs the owner's explicit approval every time, in every mode.
+ask_every_time:
+  - place, modify or cancel a live order
+  - close a live position
+  - contact a service that is not approved in context/connections/registry.md
+  - send, upload or copy any data outside this folder
+  - web searches and web page fetches
+  - git push
+
+# Never allowed. The owner does these directly with the broker or by editing files.
+never:
+  - withdraw, deposit or transfer funds
+  - change broker account settings, margin or trading permissions
+  - change this file, context/rules/ or the connections registry unless the owner asks for that change
+  - store secrets anywhere except context/connections/.env
+  - save data to the Claude account (memory, artifacts, connectors, cloud sessions)
+
+instruments:
+  stocks: allowed
+  etfs: allowed
+  forex: allowed
+  options: defined-risk only
+  futures: not enabled
+  crypto: not enabled
+  cfds: not enabled
+
+# Broker accounts the agent may use. Add one when its connection is approved.
+# Example:
+#   - id: broker-paper
+#     broker: Broker name
+#     type: paper          # paper | live
+#     instruments: [stocks, etfs, options, forex]
+accounts: []
