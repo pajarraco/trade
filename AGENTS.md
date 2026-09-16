@@ -91,4 +91,8 @@ No API or MCP server is used until it is listed as `approved` in `context/connec
 
 ## Code
 
-There is no code yet. When the stack is chosen, record the decision in `context/history/decisions.md` and add the build, test and run commands here.
+Python 3.13 (already on this machine), chosen 2026-09-16 for the MetaTrader 5
+integration — see `context/history/decisions.md`. No scripts written yet.
+
+- **Setup:** `pip install MetaTrader5` — see `context/connections/apis/metatrader5-swissquote/README.md`.
+- **Build / test / run:** none yet. Add commands here once scripts exist.

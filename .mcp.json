@@ -1,3 +1,8 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "tradingview": {
+      "type": "http",
+      "url": "https://mcp.tradingview.com/mcp"
+    }
+  }
 }

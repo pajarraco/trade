@@ -3,8 +3,8 @@
 # Agents read this at the start of every session. If anything is unclear,
 # follow the more restrictive reading and ask the owner.
 
-mode: research          # research | paper | live
-rules_status: draft     # draft | approved. While draft, the agent acts as if mode is research.
+mode: paper          # research | paper | live
+rules_status: approved      # draft | approved. While draft, the agent acts as if mode is research.
 
 # What each mode allows. Each mode includes everything in the modes above it.
 modes:
